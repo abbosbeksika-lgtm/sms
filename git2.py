@@ -1,5 +1,1 @@
-print("Hello")
-print("World")
-print("Bro")
-print("Bro")
 print("Bro")
