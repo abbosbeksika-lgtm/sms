@@ -18,7 +18,7 @@ class ContactManager:
 
     def view(self):
         if not self.contacts:
-            print("Kontaktlar bazasi bo'sh.\n")
+            print("Kontaktlar bazasi bosh.\n")
             return
         for idx, c in enumerate(self.contacts, 1):
             print(f"{idx}. Name: {c.name}, Phone: {c.phone}, Email: {c.email}")
@@ -30,7 +30,7 @@ class ContactManager:
             p = input("Phone: ")
             e = input("Email: ")
             self.contacts.append(Contact(n, p, e))
-            print("Kontakt qo‘shildi.\n")
+            print("Kontakt qoshildi.\n")
         except Exception as x:
             print("Xato:", x, "\n")
 
@@ -38,7 +38,7 @@ class ContactManager:
         self.view()
         i = int(input("Qaysi kontaktni tahrirlamoqchisiz?: ")) - 1
         if not (0 <= i < len(self.contacts)):
-            print("Bunday kontakt yo'q.\n")
+            print("Bunday kontakt yoq.\n")
             return
         n = input("Yangi ism: ")
         p = input("Yangi tel: ")
@@ -56,10 +56,10 @@ class ContactManager:
 
     def delete(self):
         self.view()
-        i = int(input("O‘chirmoqchi bo‘lganingizni tanlang: ")) - 1
+        i = int(input("Ochirmoqchi bolganingizni tanlang: ")) - 1
         if 0 <= i < len(self.contacts):
             self.contacts.pop(i)
-            print("O'chirildi.\n")
+            print("Ochirildi.\n")
         else:
             print("Xato.\n")
 
@@ -108,7 +108,7 @@ class SMSManager:
 
     def delete_sms(self):
         self.view_sms()
-        i = int(input("Qaysi SMSni o'chirmoqchisiz?: ")) - 1
+        i = int(input("Qaysi SMSni ochirmoqchisiz?: ")) - 1
         if 0 <= i < len(self.sms_baza):
             self.sms_baza.pop(i)
             print("SMS o'chirildi.\n")
@@ -117,7 +117,7 @@ class SMSManager:
 
     def manager(self):
         while True:
-            kod = input("1.Yuborish\n2.Yuborilgan SMSlar\n3.O'chirish\n4.Chiqish\n: ")
+            kod = input("1.Yuborish\n2.Yuborilgan SMSlar\n3.Ochirish\n4.Chiqish\n: ")
             if kod == '1': self.send_sms()
             elif kod == '2': self.view_sms()
             elif kod == '3': self.delete_sms()
